@@ -5,19 +5,25 @@ public class day9q1 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		int []p = new int[476];
-		// 71657 marbles
+		int ppl = sc.nextInt();
+		int marbles = sc.nextInt();
+		int []p = new int[ppl];
+		// 476 71657
+		// Too high: 32280105
+		// Too low: 371915
 		ArrayList<Integer> marbleCircle = new ArrayList<Integer>();
 		marbleCircle.add(0);
-		int current = 0;
-		for (int i = 1; i < 71658; i++) {
+		marbleCircle.add(1);
+		int current = 1;
+		for (int i = 2; i < marbles; i++) {
 			if (i % 23 == 0) {
-				p[i%476] += i;
+				p[i%ppl] += i;
 				current -= 7;
 				if (current < 0) {
 					current += marbleCircle.size();
 				}
-				p[i%23] += marbleCircle.get(current);
+				p[i%ppl] += marbleCircle.get(current);
+				marbleCircle.remove(current);
 				if (current > marbleCircle.size()) {
 					current = 0;
 				}
@@ -29,9 +35,10 @@ public class day9q1 {
 				}
 				marbleCircle.add(current, i);
 			}
+			// System.out.println(marbleCircle + " " + current);
 		}
 		Arrays.sort(p);
-		System.out.println(p[475]);
+		System.out.println(p[p.length-1]);
 	}
 
 }
