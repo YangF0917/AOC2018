@@ -77,8 +77,7 @@ public class day10q1 {
 			dX = maxX - minX; dY = maxY - minY;
 			maxX = getMaxX(coord);maxY = getMaxY(coord);minX = getMinX(coord);minY = getMinY(coord);
 		}
-		System.out.println(dX + " " + dY);
-		System.out.println(counter);
+	
 		char [][] grid = new char[200][200];
 		for (int i = 0; i < dX; i++) {
 			for(int j = 0; j < dY; j++) {
