@@ -17,7 +17,7 @@ public class day11q2 {
 		String ans = "0,0,0";
 		for (int i = 1; i < 301; i++) {
 			for (int j = 1; j < 301; j++) {
-				int min = 300-i;
+				int min = 300-i; //299
 				int min2 = 300-j;
 				if (min2 < min) {
 					min = min2;
@@ -32,6 +32,7 @@ public class day11q2 {
 				if (sum > maxSum) {
 					maxSum = sum; ans = i + "," + j + "," + m;
 				}
+				sum = 0;
 				}
 			}
 		}
