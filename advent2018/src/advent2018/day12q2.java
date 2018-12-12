@@ -1,6 +1,6 @@
 package advent2018;
 import java.util.*;
-public class day12q1 {
+public class day12q2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
@@ -21,9 +21,8 @@ public class day12q1 {
 			}
 			input = sc.nextLine();
 		}
-		System.out.println(empty);
-		System.out.println(good);
-		for (int i = 0; i < 20; i++) {
+		for (int a = 0; a < 100; a++) {
+		for (int i = 0; i < 500000000; i++) {
 			for (int j = 2; j < init.length()-2; j++) {
 				String temp = init.substring(j-2, j+3);
 				if (empty.indexOf(temp) != -1) {
@@ -36,7 +35,7 @@ public class day12q1 {
 			init = myString + "..";
 			myString = "..";
 		}
-		System.out.println(init);
+		}
 		int sum = 0;
 		for (int i = 0; i < init.length(); i++) {
 			if (init.charAt(i) == '#') {
