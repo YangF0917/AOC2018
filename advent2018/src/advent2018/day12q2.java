@@ -21,7 +21,7 @@ public class day12q2 {
 			}
 			input = sc.nextLine();
 		}
-			for (int m = 0; m < 501; m++) {
+			for (int m = 0; m < 500; m++) {
 			for (int j = 2; j < init.length()-2; j++) {
 				String temp = init.substring(j-2, j+3);
 				if (good.indexOf(temp) != -1) {
