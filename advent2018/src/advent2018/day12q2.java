@@ -1,14 +1,14 @@
-package advent2018;
+package advent2018;	
 import java.util.*;
 public class day12q2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		// - 7, Starts at -7
-		// 2268 too low
-		// 3478 too high
-		String init = ".......#........#.#.#...###..###..###.#..#....###.###.#.#...####..##..##.#####..##...#.#.....#...###.#.####............................................................";
+		// - 3, Starts at -3
+		// 3478 too low
+		String init = ".......#........#.#.#...###..###..###.#..#....###.###.#.#...####..##..##.#####..##...#.#.....#...###.#.####.....";
 		String myString = "..";
+		LinkedList<String> inputs = new LinkedList<String>();
 		LinkedList<String> empty = new LinkedList<String>();
 		LinkedList<String> good = new LinkedList<String>();
 		String input = sc.nextLine();
@@ -21,22 +21,21 @@ public class day12q2 {
 			}
 			input = sc.nextLine();
 		}
-		for (int a = 0; a < 100; a++) {
-		for (int i = 0; i < 500000000; i++) {
+			for (int m = 0; m < 501; m++) {
 			for (int j = 2; j < init.length()-2; j++) {
 				String temp = init.substring(j-2, j+3);
-				if (empty.indexOf(temp) != -1) {
-					myString += ".";
-				}
-				else {
+				if (good.indexOf(temp) != -1) {
 					myString += "#";
 				}
+				else {
+					myString += ".";
+				}
 			}
-			init = myString + "..";
+			init = myString + "...";
+			System.out.println(init);
 			myString = "..";
-		}
-		}
-		int sum = 0;
+			}
+		long sum = 0;
 		for (int i = 0; i < init.length(); i++) {
 			if (init.charAt(i) == '#') {
 				sum += (i - 7);

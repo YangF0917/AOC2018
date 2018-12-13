@@ -6,6 +6,7 @@ public class day12q1 {
 		Scanner sc = new Scanner(System.in);
 		// - 7, Starts at -7
 		// 2268 too low
+		// 3217
 		// 3478 too high
 		String init = ".......#........#.#.#...###..###..###.#..#....###.###.#.#...####..##..##.#####..##...#.#.....#...###.#.####............................................................";
 		String myString = "..";
@@ -21,8 +22,6 @@ public class day12q1 {
 			}
 			input = sc.nextLine();
 		}
-		System.out.println(empty);
-		System.out.println(good);
 		for (int i = 0; i < 20; i++) {
 			for (int j = 2; j < init.length()-2; j++) {
 				String temp = init.substring(j-2, j+3);
@@ -34,9 +33,9 @@ public class day12q1 {
 				}
 			}
 			init = myString + "..";
+			System.out.println(init);
 			myString = "..";
 		}
-		System.out.println(init);
 		int sum = 0;
 		for (int i = 0; i < init.length(); i++) {
 			if (init.charAt(i) == '#') {
